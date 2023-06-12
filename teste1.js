@@ -1,6 +1,7 @@
 const data = require("./fakeData");
 const hyphenForSpaceMakeLower = require("./middlewares/hyphenForSpaceMakeLower");
 const removeAccentsMakeLower = require("./middlewares/removeAccentsMakeLower");
+const {howManyTimesWasCalled} = require("./middlewares/howManyTimesWasCalled");
 
 const getUser = (req, res, _next) => {
 
@@ -9,7 +10,10 @@ const getUser = (req, res, _next) => {
 
     const findUser = data.find(({ name }) => removeAccentsMakeLower(name) === hyphenForSpaceQuery);
 
-    if (findUser) return res.status(200).json(findUser);
+    if (findUser) {
+        howManyTimesWasCalled(hyphenForSpaceQuery);
+        return res.status(200).json(findUser);
+    }
     res.status(404).json({message: "Name not found"});
 };
 

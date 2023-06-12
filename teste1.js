@@ -1,7 +1,7 @@
 const data = require("./fakeData");
-const hyphenForSpaceMakeLower = require("./middlewares/hyphenForSpaceMakeLower");
-const removeAccentsMakeLower = require("./middlewares/removeAccentsMakeLower");
-const {howManyTimesWasCalled} = require("./middlewares/howManyTimesWasCalled");
+const hyphenForSpaceMakeLower = require("./utils/hyphenForSpaceMakeLower");
+const removeAccentsMakeLower = require("./utils/removeAccentsMakeLower");
+const {howManyTimesWasCalled} = require("./utils/howManyTimesWasCalled");
 
 const getUser = (req, res, _next) => {
 

@@ -1,7 +1,7 @@
 const data = require("./fakeData");
-const { username } = require("./middlewares/howManyTimesWasCalled");
-const hyphenForSpaceMakeLower = require("./middlewares/hyphenForSpaceMakeLower");
-const findUserByName = require("./middlewares/findUserByName");
+const { username } = require("./utils/howManyTimesWasCalled");
+const hyphenForSpaceMakeLower = require("./utils/hyphenForSpaceMakeLower");
+const findUserByName = require("./utils/findUserByName");
 const HttpException = require("./middlewares/HttpException");
 
 module.exports = function(req, res){

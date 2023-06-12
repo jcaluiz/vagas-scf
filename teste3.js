@@ -1,13 +1,10 @@
 var data =  require("./fakeData");
-const hyphenForSpaceMakeLower = require("./middlewares/hyphenForSpaceMakeLower");
-const removeAccentsMakeLower = require("./middlewares/removeAccentsMakeLower");
+const findUserByName = require("./middlewares/findUserByName");
 
 module.exports = function(req, res) {
     const { name: nameQuery } = req.query;
 
-    const hyphenForSpaceQuery = hyphenForSpaceMakeLower(nameQuery);
-
-    const findUser = data.find(({ name }) => removeAccentsMakeLower(name) === hyphenForSpaceQuery);
+    const findUser = findUserByName(data, nameQuery);
 
     const indexToRemove = data.indexOf(findUser);
 

@@ -1,5 +1,5 @@
 const data = require("./fakeData");
-const HttpException = require("./utils/HttpException");
+const HttpException = require("./middlewares/HttpException");
 
 function validateUserInput(name, job) {
     if (!name) throw new HttpException(404, "Missing field name!");
@@ -11,7 +11,7 @@ function validateUserInput(name, job) {
     }
 }
 
-module.exports = function (req, res) {
+module.exports = function (req, res, next) {
     try {
         const { name, job } = req.body;
 

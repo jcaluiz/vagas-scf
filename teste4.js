@@ -1,13 +1,15 @@
-var data =  require("./fakeData");
+const data =  require("./fakeData");
 
 module.exports =  function(req, res) {
   
-    var id =  req.query.id;
+    const {id: idQuery} =  req.query;
+    const { name, job } = req.body;
 
-    const reg = data.find(d => id == id);
-    reg.name = req.body.name;
-    reg.job = req.body.job;
+    const userToUpdate = data.find(({id}) => id == idQuery);
 
-    res.send(reg);
+    if (name !== undefined) userToUpdate.name = name;
+    if (job !== undefined) userToUpdate.job = job;
+
+    res.send(userToUpdate);
 
 };

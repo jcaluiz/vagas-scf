@@ -1,6 +1,6 @@
 const data =  require("./fakeData");
 const HttpException = require("./middlewares/HttpException");
-const findUserByName = require("./utils/findUserByName");
+const findUserByName = require("./models/findUserByName");
 
 module.exports = function(req, res) {
     try {

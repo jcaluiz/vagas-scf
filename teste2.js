@@ -11,7 +11,7 @@ function validateUserInput(name, job) {
     }
 }
 
-module.exports = function (req, res, next) {
+module.exports = function (req, res, _next) {
     try {
         const { name, job } = req.body;
 
@@ -21,7 +21,7 @@ module.exports = function (req, res, next) {
 
         data.push(newUser);
 
-        res.send(newUser);
+        res.status(201).json(newUser);
     } catch (error) {
         res.status(error.status).json({ message: error.message });
     }

@@ -1,4 +1,4 @@
-const mockFakeData  =  [
+const mockFakeData = [
     {
         id: 1,
         name: "João Oliveira",
@@ -11,5 +11,14 @@ const mockFakeData  =  [
     },
 ];
 
+const addMockData = {
+    id: 3,
+    name: "Junior",
+    job: "Desenvolvedor",
+}
 
-module.exports = mockFakeData;
+
+module.exports = {
+    mockFakeData,
+    addMockData,
+};

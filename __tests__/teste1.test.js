@@ -3,8 +3,8 @@ const sinon = require('sinon');
 const sinonChai = require('sinon-chai');
 const { expect } = require('chai');
 const {getUser} = require('../teste1');
-const teste1 = require('../teste1');
-const mockFakeData = require('./mocks/mockAllUser');
+// const teste1 = require('../teste1');
+const {mockFakeData} = require('./mocks/mockAllUser');
 
 chai.use(sinonChai);
 
@@ -20,7 +20,7 @@ describe('Teste do arquivo teste1.js', () => {
         res.status = sinon.stub().returns(res);
         res.json = sinon.stub().returns();
         const next = sinon.stub();
-        sinon.stub(teste1, 'getUser').resolves();
+        sinon.stub(getUser);
         
         await getUser(req, res, next);
         expect(res.status).to.have.been.calledWith(200);

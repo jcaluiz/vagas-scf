@@ -13,7 +13,7 @@ const checkPermission = require('../middlewares/checkPermission');
 chai.use(sinonChai);
 chai.use(chaiHttp);
 
-describe('Teste do arquivo teste1.js', () => {
+describe('Teste do arquivo teste3.js', () => {
     let app;
     let request;
 
@@ -27,7 +27,7 @@ describe('Teste do arquivo teste1.js', () => {
         sinon.reset();
     });
 
-    it('Testando se é possível fazer uma busca pelo nome', async () => {
+    it('Testando se é possível fazer deletar passando o nome por query', async () => {
         const res = {
             status: sinon.stub(),
             json: sinon.stub().callsFake((response) => {

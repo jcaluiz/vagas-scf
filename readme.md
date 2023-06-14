@@ -107,3 +107,6 @@ Foi criado um middleware chamado `checkPermission` para verificar se o usuário 
 * Quando é encontrado a permissão `delete`, o middleware cria um req.hasDeletePermission.
 * Quando é encontrado a permissão `update`, o middleware cria um req.hasUpdatePermission.
 
+## Teste automatizado
+
+Execute o teste automatizado com `npm test`.
